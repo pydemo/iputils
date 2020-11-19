@@ -2,7 +2,7 @@
 
 source: https://github.com/iputils/iputils
 
-## get rif of 'Operation not permitted'
+## get rid of 'Operation not permitted'
 ```
 ./ping/ping oracle.com
 ./ping/ping: socket: Operation not permitted
