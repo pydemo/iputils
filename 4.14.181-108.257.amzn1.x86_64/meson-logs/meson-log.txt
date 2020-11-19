@@ -1,0 +1,775 @@
+Build started at 2020-11-19T17:03:19.165536
+Main binary: /usr/bin/python36
+Python system: Linux
+The Meson build system
+Version: 0.46.1
+Source dir: /home/ec2-user/src/iputils
+Build dir: /home/ec2-user/src/iputils/builddir
+Build type: native build
+Project name: iputils
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/ec2-user/src/iputils/builddir/meson-private/sanitycheckc.c -o /home/ec2-user/src/iputils/builddir/meson-private/sanitycheckc.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/ec2-user/src/iputils/builddir/meson-private/sanitycheckc.exe
+Native C compiler: cc (gcc 7.2.1 "cc (GCC) 7.2.1 20170915 (Red Hat 7.2.1-2)")
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Found pkg-config: /usr/bin/pkg-config (0.27.1)
+Determining dependency 'systemd' with pkg-config executable '/usr/bin/pkg-config'
+Dependency systemd found: NO
+Running compile:
+Working directory:  /tmp/tmpvvvazywz
+Command line:  cc /tmp/tmpvvvazywz/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpvvvazywz/output.exe -O0 -std=c99 -D_GNU_SOURCE 
+
+Code:
+ 
+        #define __fpending meson_disable_define_of___fpending
+        
+        #include <limits.h>
+        #undef __fpending
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char __fpending ();
+        
+        #if defined __stub___fpending || defined __stub_____fpending
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main () {
+          return __fpending ();
+        }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking for function "__fpending": YES
+Running compile:
+Working directory:  /tmp/tmp50fvt3rg
+Command line:  cc /tmp/tmp50fvt3rg/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmp50fvt3rg/output.exe -O0 -std=c99 -D_GNU_SOURCE 
+
+Code:
+ 
+        #define getrandom meson_disable_define_of_getrandom
+        
+        #include <limits.h>
+        #undef getrandom
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char getrandom ();
+        
+        #if defined __stub_getrandom || defined __stub___getrandom
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main () {
+          return getrandom ();
+        }
+Compiler stdout:
+ 
+Compiler stderr:
+ /tmp/cc2LDiqf.o: In function `main':
+testfile.c:(.text+0xa): undefined reference to `getrandom'
+collect2: error: ld returned 1 exit status
+
+Running compile:
+Working directory:  /tmp/tmpiok9fdn5
+Command line:  cc /tmp/tmpiok9fdn5/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpiok9fdn5/output.exe -O0 -std=c99 -D_GNU_SOURCE 
+
+Code:
+ 
+        int main() {
+        #ifdef __has_builtin
+            #if !__has_builtin(__builtin_getrandom)
+                #error "__builtin_getrandom not found"
+            #endif
+        #elif ! defined(getrandom)
+            /* Check for __builtin_getrandom only if no includes were added to the
+             * prefix above, which means no definition of getrandom can be found.
+             * We would always check for this, but we get false positives on
+             * MSYS2 if we do. Their toolchain is broken, but we can at least
+             * give them a workaround. */
+            #if 1
+                __builtin_getrandom;
+            #else
+                #error "No definition for __builtin_getrandom found in the prefix"
+            #endif
+        #endif
+        }
+Compiler stdout:
+ 
+Compiler stderr:
+ /tmp/tmpiok9fdn5/testfile.c: In function ‘main’:
+/tmp/tmpiok9fdn5/testfile.c:14:17: error: ‘__builtin_getrandom’ undeclared (first use in this function); did you mean ‘__builtin_strndup’?
+                 __builtin_getrandom;
+                 ^~~~~~~~~~~~~~~~~~~
+                 __builtin_strndup
+/tmp/tmpiok9fdn5/testfile.c:14:17: note: each undeclared identifier is reported only once for each function it appears in
+
+Checking for function "getrandom": NO
+Running compile:
+Working directory:  /tmp/tmpqyi3w04l
+Command line:  cc /tmp/tmpqyi3w04l/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpqyi3w04l/output.exe -O0 -std=c99 -D_GNU_SOURCE 
+
+Code:
+ 
+        #define nanosleep meson_disable_define_of_nanosleep
+        
+        #include <limits.h>
+        #undef nanosleep
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char nanosleep ();
+        
+        #if defined __stub_nanosleep || defined __stub___nanosleep
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main () {
+          return nanosleep ();
+        }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking for function "nanosleep": YES
+Running compile:
+Working directory:  /tmp/tmpbbbqq_yf
+Command line:  cc /tmp/tmpbbbqq_yf/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmpbbbqq_yf/output.obj -O0 -std=c99 
+
+Code:
+ 
+	#include <sys/types.h>
+	#include <netinet/in.h>
+	#include <netinet/icmp6.h>
+	int main(void) {
+		struct icmp6_nodeinfo nodeinfo;
+		return 0;
+	}
+
+Compiler stdout:
+ 
+Compiler stderr:
+ /tmp/tmpbbbqq_yf/testfile.c: In function ‘main’:
+/tmp/tmpbbbqq_yf/testfile.c:6:25: error: storage size of ‘nodeinfo’ isn’t known
+   struct icmp6_nodeinfo nodeinfo;
+                         ^~~~~~~~
+
+Checking if "struct icmp6_nodeinfo" compiles: NO
+Running compile:
+Working directory:  /tmp/tmpwyr0wg33
+Command line:  cc /tmp/tmpwyr0wg33/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /tmp/tmpwyr0wg33/output.obj -O0 -std=c99 
+
+Code:
+ 
+	#include <sys/types.h>
+	#include <sys/time.h>
+	#include <time.h>
+	int main(void) {
+		struct tm time;
+		return 0;
+	}
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking if "struct tm time;" compiles: YES
+Running compile:
+Working directory:  /tmp/tmpwhkhurvb
+Command line:  cc /tmp/tmpwhkhurvb/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpwhkhurvb/output.exe -O0 -Wl,--start-group -lm -Wl,--end-group 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library m found: YES
+Running compile:
+Working directory:  /tmp/tmpw24vovvp
+Command line:  cc /tmp/tmpw24vovvp/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpw24vovvp/output.exe -O0 -Wl,--start-group -lresolv -Wl,--end-group 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library resolv found: YES
+Running compile:
+Working directory:  /tmp/tmpnxielzem
+Command line:  cc /tmp/tmpnxielzem/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpnxielzem/output.exe -O0 -std=c99 
+
+Code:
+ 
+        #define clock_gettime meson_disable_define_of_clock_gettime
+        
+        #include <limits.h>
+        #undef clock_gettime
+        
+        #ifdef __cplusplus
+        extern "C"
+        #endif
+        char clock_gettime ();
+        
+        #if defined __stub_clock_gettime || defined __stub___clock_gettime
+        fail fail fail this function is not going to work
+        #endif
+        
+        int main () {
+          return clock_gettime ();
+        }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking for function "clock_gettime": YES
+Running compile:
+Working directory:  /tmp/tmpr5rrhmjy
+Command line:  cc /tmp/tmpr5rrhmjy/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpr5rrhmjy/output.exe -O0 -Wl,--start-group -ldisabler-appears-to-disable-executable-build -Wl,--end-group 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ /usr/bin/ld: cannot find -ldisabler-appears-to-disable-executable-build
+collect2: error: ld returned 1 exit status
+
+Library disabler-appears-to-disable-executable-build found: NO
+Running compile:
+Working directory:  /tmp/tmp25anw9gg
+Command line:  cc /tmp/tmp25anw9gg/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmp25anw9gg/output.exe -O0 -Wl,--start-group -lcap -Wl,--end-group 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Library cap found: YES
+Running compile:
+Working directory:  /tmp/tmpdv7_fsrz
+Command line:  cc /tmp/tmpdv7_fsrz/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -o /tmp/tmpdv7_fsrz/output.exe -O0 -Wl,--start-group -lintl -Wl,--end-group 
+
+Code:
+ int main(int argc, char **argv) { return 0; }
+Compiler stdout:
+ 
+Compiler stderr:
+ /usr/bin/ld: cannot find -lintl
+collect2: error: ld returned 1 exit status
+
+Library intl found: NO
+Determining dependency 'libidn2' with pkg-config executable '/usr/bin/pkg-config'
+Dependency libidn2 found: NO
+Running compile:
+Working directory:  /tmp/tmpy7iabz8u
+Command line:  cc /tmp/tmpy7iabz8u/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("inttypes.h")
+          #error "Header 'inttypes.h' could not be found"
+         #endif
+        #else
+         #include <inttypes.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "inttypes.h": YES
+Running compile:
+Working directory:  /tmp/tmp02tne0ai
+Command line:  cc /tmp/tmp02tne0ai/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("limits.h")
+          #error "Header 'limits.h' could not be found"
+         #endif
+        #else
+         #include <limits.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "limits.h": YES
+Running compile:
+Working directory:  /tmp/tmp6ommzmg3
+Command line:  cc /tmp/tmp6ommzmg3/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("linux/rtnetlink.h")
+          #error "Header 'linux/rtnetlink.h' could not be found"
+         #endif
+        #else
+         #include <linux/rtnetlink.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "linux/rtnetlink.h": YES
+Running compile:
+Working directory:  /tmp/tmpr9mwllat
+Command line:  cc /tmp/tmpr9mwllat/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("memory.h")
+          #error "Header 'memory.h' could not be found"
+         #endif
+        #else
+         #include <memory.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "memory.h": YES
+Running compile:
+Working directory:  /tmp/tmp3s_mizl9
+Command line:  cc /tmp/tmp3s_mizl9/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("netdb.h")
+          #error "Header 'netdb.h' could not be found"
+         #endif
+        #else
+         #include <netdb.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "netdb.h": YES
+Running compile:
+Working directory:  /tmp/tmpmeuw7cwx
+Command line:  cc /tmp/tmpmeuw7cwx/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("netinet/icmp6.h")
+          #error "Header 'netinet/icmp6.h' could not be found"
+         #endif
+        #else
+         #include <netinet/icmp6.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "netinet/icmp6.h": YES
+Running compile:
+Working directory:  /tmp/tmpkpe2wpuk
+Command line:  cc /tmp/tmpkpe2wpuk/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("netinet/in.h")
+          #error "Header 'netinet/in.h' could not be found"
+         #endif
+        #else
+         #include <netinet/in.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "netinet/in.h": YES
+Running compile:
+Working directory:  /tmp/tmp00nf28zg
+Command line:  cc /tmp/tmp00nf28zg/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("netinet/ip6.h")
+          #error "Header 'netinet/ip6.h' could not be found"
+         #endif
+        #else
+         #include <netinet/ip6.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "netinet/ip6.h": YES
+Running compile:
+Working directory:  /tmp/tmppvbmohwy
+Command line:  cc /tmp/tmppvbmohwy/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("pwd.h")
+          #error "Header 'pwd.h' could not be found"
+         #endif
+        #else
+         #include <pwd.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "pwd.h": YES
+Running compile:
+Working directory:  /tmp/tmpxzebppqz
+Command line:  cc /tmp/tmpxzebppqz/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdint.h")
+          #error "Header 'stdint.h' could not be found"
+         #endif
+        #else
+         #include <stdint.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stdint.h": YES
+Running compile:
+Working directory:  /tmp/tmpqji45kgc
+Command line:  cc /tmp/tmpqji45kgc/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdlib.h")
+          #error "Header 'stdlib.h' could not be found"
+         #endif
+        #else
+         #include <stdlib.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stdlib.h": YES
+Running compile:
+Working directory:  /tmp/tmp8x3o8so8
+Command line:  cc /tmp/tmp8x3o8so8/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("string.h")
+          #error "Header 'string.h' could not be found"
+         #endif
+        #else
+         #include <string.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "string.h": YES
+Running compile:
+Working directory:  /tmp/tmpiyz7b4hx
+Command line:  cc /tmp/tmpiyz7b4hx/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("strings.h")
+          #error "Header 'strings.h' could not be found"
+         #endif
+        #else
+         #include <strings.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "strings.h": YES
+Running compile:
+Working directory:  /tmp/tmpe04oqz9_
+Command line:  cc /tmp/tmpe04oqz9_/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/capability.h")
+          #error "Header 'sys/capability.h' could not be found"
+         #endif
+        #else
+         #include <sys/capability.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "sys/capability.h": YES
+Running compile:
+Working directory:  /tmp/tmpc3z1214t
+Command line:  cc /tmp/tmpc3z1214t/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("syslog.h")
+          #error "Header 'syslog.h' could not be found"
+         #endif
+        #else
+         #include <syslog.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "syslog.h": YES
+Running compile:
+Working directory:  /tmp/tmp0b7pubja
+Command line:  cc /tmp/tmp0b7pubja/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/time.h")
+          #error "Header 'sys/time.h' could not be found"
+         #endif
+        #else
+         #include <sys/time.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "sys/time.h": YES
+Running compile:
+Working directory:  /tmp/tmp999zb92q
+Command line:  cc /tmp/tmp999zb92q/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/types.h")
+          #error "Header 'sys/types.h' could not be found"
+         #endif
+        #else
+         #include <sys/types.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "sys/types.h": YES
+Running compile:
+Working directory:  /tmp/tmp4qngiubg
+Command line:  cc /tmp/tmp4qngiubg/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/uio.h")
+          #error "Header 'sys/uio.h' could not be found"
+         #endif
+        #else
+         #include <sys/uio.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "sys/uio.h": YES
+Running compile:
+Working directory:  /tmp/tmpgtl6alqi
+Command line:  cc /tmp/tmpgtl6alqi/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("sys/utsname.h")
+          #error "Header 'sys/utsname.h' could not be found"
+         #endif
+        #else
+         #include <sys/utsname.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "sys/utsname.h": YES
+Running compile:
+Working directory:  /tmp/tmpkriozcv7
+Command line:  cc /tmp/tmpkriozcv7/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("unistd.h")
+          #error "Header 'unistd.h' could not be found"
+         #endif
+        #else
+         #include <unistd.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "unistd.h": YES
+Running compile:
+Working directory:  /tmp/tmp02euk87q
+Command line:  cc /tmp/tmp02euk87q/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdio.h")
+          #error "Header 'stdio.h' could not be found"
+         #endif
+        #else
+         #include <stdio.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stdio.h": YES
+Using cached compile:
+Cached command line:  cc /tmp/tmpqji45kgc/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdlib.h")
+          #error "Header 'stdlib.h' could not be found"
+         #endif
+        #else
+         #include <stdlib.h>
+        #endif
+Cached compiler stdout:
+ 
+Cached compiler stderr:
+ 
+Has header "stdlib.h": YES
+Running compile:
+Working directory:  /tmp/tmpgcksjtoc
+Command line:  cc /tmp/tmpgcksjtoc/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stddef.h")
+          #error "Header 'stddef.h' could not be found"
+         #endif
+        #else
+         #include <stddef.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stddef.h": YES
+Running compile:
+Working directory:  /tmp/tmp582rz06x
+Command line:  cc /tmp/tmp582rz06x/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("stdarg.h")
+          #error "Header 'stdarg.h' could not be found"
+         #endif
+        #else
+         #include <stdarg.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "stdarg.h": YES
+Dependency threads found: YES
+Running compile:
+Working directory:  /tmp/tmp_5p_5q2p
+Command line:  cc /tmp/tmp_5p_5q2p/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -E -P -O0 -std=c99 
+
+Code:
+ 
+        #ifdef __has_include
+         #if !__has_include("error.h")
+          #error "Header 'error.h' could not be found"
+         #endif
+        #else
+         #include <error.h>
+        #endif
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Has header "error.h": YES
+Found git repository at /home/ec2-user/src/iputils
+Configuring config.h using configuration
+Program setcap found: YES (/usr/sbin/setcap)
+Program ../build-aux/setcap-setuid.sh found: YES (/home/ec2-user/src/iputils/ping/../build-aux/setcap-setuid.sh)
+Program build-aux/setcap-setuid.sh found: YES (/home/ec2-user/src/iputils/build-aux/setcap-setuid.sh)
+Configuring ninfod.sh using configuration
+Program xsltproc found: YES (/usr/bin/xsltproc)
+Running command: /usr/bin/xsltproc --nonet http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
+--- stdout----
+
+----stderr----
+I/O error : Attempt to load network entity http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
+warning: failed to load external entity "http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl"
+cannot parse http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
+
+
+Message: WARNING: xsltproc: cannot process http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
+Message: Docs cannot be built: xsltproc does not work correctly
+Message: 
+
+APPLICATIONS (build)
+man: false
+HTML man: false
+arping: true (capability or suid: false)
+clockdiff: true (capability or suid: true)
+ninfod: true (syslog: true)
+ping: true (capability or suid: true)
+rarpd: false
+rdisc: true (server: true)
+tftpd: false
+tracepath: true
+traceroute6: false (capability or suid: true)
+
+CONFIGURATION
+Capatiblity (with libcap): true
+IDN (with libidn2): true
+I18N (with gettext): true
+systemd: false
+
+SYSTEM PATHS
+prefix: /usr/local
+bindir: /usr/local/bin
+localedir: /usr/local/share/locale
+sbindir: /usr/local/sbin
+systemdunitdir: 
+
+Build targets in project: 11
+Found ninja-1.8.2 at /usr/bin/ninja

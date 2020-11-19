@@ -1,0 +1,77 @@
+[
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Icommon@sta -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -fPIC  -MD -MQ 'common@sta/iputils_common.c.o' -MF 'common@sta/iputils_common.c.o.d' -o 'common@sta/iputils_common.c.o' -c ../iputils_common.c",
+    "file": "../iputils_common.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Icommon@sta -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -fPIC  -MD -MQ 'common@sta/md5.c.o' -MF 'common@sta/md5.c.o.d' -o 'common@sta/md5.c.o' -c ../md5.c",
+    "file": "../md5.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iping/ping@@ping@exe -Iping -I../ping -Iping/.. -I../ping/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'ping/ping@@ping@exe/ping.c.o' -MF 'ping/ping@@ping@exe/ping.c.o.d' -o 'ping/ping@@ping@exe/ping.c.o' -c ../ping/ping.c",
+    "file": "../ping/ping.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iping/ping@@ping@exe -Iping -I../ping -Iping/.. -I../ping/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'ping/ping@@ping@exe/ping_common.c.o' -MF 'ping/ping@@ping@exe/ping_common.c.o.d' -o 'ping/ping@@ping@exe/ping_common.c.o' -c ../ping/ping_common.c",
+    "file": "../ping/ping_common.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iping/ping@@ping@exe -Iping -I../ping -Iping/.. -I../ping/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'ping/ping@@ping@exe/ping6_common.c.o' -MF 'ping/ping@@ping@exe/ping6_common.c.o.d' -o 'ping/ping@@ping@exe/ping6_common.c.o' -c ../ping/ping6_common.c",
+    "file": "../ping/ping6_common.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iping/ping@@ping@exe -Iping -I../ping -Iping/.. -I../ping/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'ping/ping@@ping@exe/node_info.c.o' -MF 'ping/ping@@ping@exe/node_info.c.o.d' -o 'ping/ping@@ping@exe/node_info.c.o' -c ../ping/node_info.c",
+    "file": "../ping/node_info.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Itracepath@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'tracepath@exe/tracepath.c.o' -MF 'tracepath@exe/tracepath.c.o.d' -o 'tracepath@exe/tracepath.c.o' -c ../tracepath.c",
+    "file": "../tracepath.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iclockdiff@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'clockdiff@exe/clockdiff.c.o' -MF 'clockdiff@exe/clockdiff.c.o.d' -o 'clockdiff@exe/clockdiff.c.o' -c ../clockdiff.c",
+    "file": "../clockdiff.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Irdisc@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'rdisc@exe/rdisc.c.o' -MF 'rdisc@exe/rdisc.c.o.d' -o 'rdisc@exe/rdisc.c.o' -c ../rdisc.c",
+    "file": "../rdisc.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Iarping@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"'  -MD -MQ 'arping@exe/arping.c.o' -MF 'arping@exe/arping.c.o.d' -o 'arping@exe/arping.c.o' -c ../arping.c",
+    "file": "../arping.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Ininfod/ninfod@@ninfod@exe -Ininfod -I../ninfod -Ininfod/.. -I../ninfod/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -pthread  -MD -MQ 'ninfod/ninfod@@ninfod@exe/ni_ifaddrs.c.o' -MF 'ninfod/ninfod@@ninfod@exe/ni_ifaddrs.c.o.d' -o 'ninfod/ninfod@@ninfod@exe/ni_ifaddrs.c.o' -c ../ninfod/ni_ifaddrs.c",
+    "file": "../ninfod/ni_ifaddrs.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Ininfod/ninfod@@ninfod@exe -Ininfod -I../ninfod -Ininfod/.. -I../ninfod/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -pthread  -MD -MQ 'ninfod/ninfod@@ninfod@exe/ninfod.c.o' -MF 'ninfod/ninfod@@ninfod@exe/ninfod.c.o.d' -o 'ninfod/ninfod@@ninfod@exe/ninfod.c.o' -c ../ninfod/ninfod.c",
+    "file": "../ninfod/ninfod.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Ininfod/ninfod@@ninfod@exe -Ininfod -I../ninfod -Ininfod/.. -I../ninfod/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -pthread  -MD -MQ 'ninfod/ninfod@@ninfod@exe/ninfod_addrs.c.o' -MF 'ninfod/ninfod@@ninfod@exe/ninfod_addrs.c.o.d' -o 'ninfod/ninfod@@ninfod@exe/ninfod_addrs.c.o' -c ../ninfod/ninfod_addrs.c",
+    "file": "../ninfod/ninfod_addrs.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Ininfod/ninfod@@ninfod@exe -Ininfod -I../ninfod -Ininfod/.. -I../ninfod/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -pthread  -MD -MQ 'ninfod/ninfod@@ninfod@exe/ninfod_core.c.o' -MF 'ninfod/ninfod@@ninfod@exe/ninfod_core.c.o.d' -o 'ninfod/ninfod@@ninfod@exe/ninfod_core.c.o' -c ../ninfod/ninfod_core.c",
+    "file": "../ninfod/ninfod_core.c"
+  },
+  {
+    "directory": "/home/ec2-user/src/iputils/builddir",
+    "command": "cc -Ininfod/ninfod@@ninfod@exe -Ininfod -I../ninfod -Ininfod/.. -I../ninfod/.. -I. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -O0 -g -include config.h -include git-version.h '-DGETTEXT_PACKAGE=\"iputils\"' -pthread  -MD -MQ 'ninfod/ninfod@@ninfod@exe/ninfod_name.c.o' -MF 'ninfod/ninfod@@ninfod@exe/ninfod_name.c.o.d' -o 'ninfod/ninfod@@ninfod@exe/ninfod_name.c.o' -c ../ninfod/ninfod_name.c",
+    "file": "../ninfod/ninfod_name.c"
+  }
+]
